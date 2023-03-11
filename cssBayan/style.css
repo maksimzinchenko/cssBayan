@@ -1,13 +1,91 @@
-.container {
-    width: 80%;
-    margin: 0 auto;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.accordeon {
+body {
+    background-color: #fff;
+    font-family: 'Open Sans', sans-serif ;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 2vh;
+    width: 90%;
+}
+
+.accordion ul {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
 }
 
-.accordeon_section__header {
-    display: flex;
+
+.accordion ul,
+.accordion li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
 }
+
+.accordion label {
+    /* display: block; */
+    font-size: 1rem;
+    border-top: 1px solid gray ;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0.2em;
+    gap: 1rem;
+}
+
+.accordion .accordion-content {
+    height: 0;
+    overflow: hidden;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.accordion input[type=radio] {
+    display: none;
+}
+
+.accordion [id^=meme]:checked ~ div[id^=accordion-content]{
+    display: block;
+    height: 15em;
+    transition: all 0.3s;
+}
+
+
+.accordion [id^=meme]:hover ~ div[id^=accordion-content]{
+    display: block;
+    height: 15em;
+    transition: all 0.3s;
+}
+
+li:hover [id^=meme] ~ div[id^=accordion-content]{
+    display: block;
+    height: 15em;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+img {
+    width: 80%;
+}
+
