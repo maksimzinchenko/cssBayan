@@ -86,39 +86,85 @@ li:hover [id^=meme] ~ div[id^=accordion-content]{
 }
 
 img {
-    width: 80%;
+    height: 40vh;
+    display: block;
+    margin: 0 auto;
 }
+
 
 li:hover .rotator {
     transform: rotate(45deg);
-    transition: all 0.3s;
+    transform-origin: center;
+    transition: all 0.5s ease-in-out;
+}
+
+li:has(input[type="radio"]:checked) .rotator {
+
+    transform: rotate(45deg) ;
+    transform-origin: center;
+    transition: all 0.5s ease-in-out;
 }
 
 @media only screen and (min-width: 600px) {
     h1 {
-        font-size: 3rem;
+        font-size: 1rem;
     }
 
     h2 {
-        font-size: 1.4rem;
+        font-size: 0.5rem;
     }
 
     .container {
-        margin: 0 auto;
-        padding: 2vh;
-        width: 70%;
+        width: 30%;
     }
 
     .accordion [id^=meme]:checked ~ div[id^=accordion-content]{
-        height: 35vh;
+        height: 18vh;
     }
 
     .accordion [id^=meme]:hover ~ div[id^=accordion-content]{
-        height: 35vh;
+        height: 18vh;
     }
 
     li:hover [id^=meme] ~ div[id^=accordion-content]{
-        height: 35vh;
+        height: 18vh;
+    }
+
+    img {
+        height: 15vh;
+    }
+
+  }
+
+
+@media only screen and (min-width: 1000px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1rem;
+    }
+
+    .container {
+        width: 20%;
+    }
+
+    img {
+        height: 28vh;
+
+    }
+
+    .accordion [id^=meme]:checked ~ div[id^=accordion-content]{
+        height: 30vh;
+    }
+
+    .accordion [id^=meme]:hover ~ div[id^=accordion-content]{
+        height: 30vh;
+    }
+
+    li:hover [id^=meme] ~ div[id^=accordion-content]{
+        height: 30vh;
     }
 
   }
