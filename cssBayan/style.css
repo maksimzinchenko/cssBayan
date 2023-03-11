@@ -16,7 +16,7 @@ h1 {
 h2 {
     display: flex;
     justify-content: space-between;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
 }
 
 .container {
@@ -44,13 +44,13 @@ h2 {
 .accordion label {
     /* display: block; */
     font-size: 1rem;
-    border-top: 1px solid gray ;
+    border-top: 0.1em solid gray ;
     cursor: pointer;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     margin: 0;
-    padding: 0.2em;
+    padding: 0.3em;
     gap: 1rem;
 }
 
@@ -67,20 +67,20 @@ h2 {
 
 .accordion [id^=meme]:checked ~ div[id^=accordion-content]{
     display: block;
-    height: 15em;
+    height: 14em;
     transition: all 0.3s;
 }
 
 
 .accordion [id^=meme]:hover ~ div[id^=accordion-content]{
     display: block;
-    height: 15em;
+    height: 14em;
     transition: all 0.3s;
 }
 
 li:hover [id^=meme] ~ div[id^=accordion-content]{
     display: block;
-    height: 15em;
+    height: 14em;
     transition: all 0.3s;
     cursor: pointer;
 }
@@ -89,3 +89,36 @@ img {
     width: 80%;
 }
 
+li:hover .rotator {
+    transform: rotate(45deg);
+    transition: all 0.3s;
+}
+
+@media only screen and (min-width: 600px) {
+    h1 {
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    .container {
+        margin: 0 auto;
+        padding: 2vh;
+        width: 70%;
+    }
+
+    .accordion [id^=meme]:checked ~ div[id^=accordion-content]{
+        height: 35vh;
+    }
+
+    .accordion [id^=meme]:hover ~ div[id^=accordion-content]{
+        height: 35vh;
+    }
+
+    li:hover [id^=meme] ~ div[id^=accordion-content]{
+        height: 35vh;
+    }
+
+  }
