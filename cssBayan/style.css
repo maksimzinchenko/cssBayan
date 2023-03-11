@@ -1,0 +1,4 @@
+.accordeon {
+    display: flex;
+    flex-direction: column;
+}
