@@ -1,4 +1,13 @@
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
 .accordeon {
     display: flex;
     flex-direction: column;
+}
+
+.accordeon_section__header {
+    display: flex;
 }
