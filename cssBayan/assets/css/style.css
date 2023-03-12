@@ -1,0 +1,166 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #fff;
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 2vh;
+    width: 90%;
+}
+
+.accordion ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+
+.accordion ul,
+.accordion li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.accordion label {
+    font-size: 1rem;
+    border-top: 0.1em solid gray;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0.3em;
+    gap: 1rem;
+}
+
+.accordion .accordion-content {
+    height: 0;
+    overflow: hidden;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.accordion input[type=radio] {
+    display: none;
+}
+
+.accordion [id^=meme]:checked~div[id^=accordion-content] {
+    display: block;
+    height: 14em;
+    transition: all 0.3s;
+}
+
+img {
+    height: 40vh;
+    display: block;
+    margin: 0 auto;
+}
+
+.rotator {
+    visibility: visible;
+}
+
+li:has(input[type="radio"]:checked) .rotator {
+
+    transform: rotate(45deg);
+    transform-origin: center;
+    transition: all 0.5s ease-in-out;
+}
+
+@media only screen and (min-width: 600px) {
+    h1 {
+        font-size: 1rem;
+    }
+
+    h2 {
+        font-size: 0.5rem;
+    }
+
+    .container {
+        width: 30%;
+    }
+
+    .accordion [id^=meme]:checked~div[id^=accordion-content] {
+        height: 18vh;
+    }
+
+    img {
+        height: 15vh;
+    }
+
+}
+
+
+@media only screen and (min-width: 1000px) {
+    .rotator {
+        visibility: hidden;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1rem;
+    }
+
+    .container {
+        width: 20%;
+    }
+
+    img {
+        height: 28vh;
+    }
+
+    ul:hover .rotator {
+        visibility: visible;
+        transition: all 0.1s ease-in-out;
+    }
+
+    li:hover img {
+        height: 29vh;
+        transition: all 0.1s ease-in-out;
+        filter: sepia(1);
+    }
+
+    li:hover .rotator {
+        visibility: visible;
+        transform: rotate(45deg);
+        transform-origin: center;
+        transition: all 0.5s ease-in-out;
+    }
+
+    .accordion [id^=meme]:checked~div[id^=accordion-content] {
+        height: 30vh;
+    }
+
+    .accordion [id^=meme]:hover~div[id^=accordion-content] {
+        height: 30vh;
+    }
+
+    li:hover [id^=meme]~div[id^=accordion-content] {
+        height: 30vh;
+        cursor: pointer;
+    }
+
+}
